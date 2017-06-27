@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1>This is my workouts</h1>
+
+  {% for workout in workouts %}
+    <a href="{% url 'workout-single' workout_id=workout.id %}">
+      My workout on {{ workout.date }}
+    </a>
+  {% empty %}
+    <h1>You is lazy</h1>
+  {% endfor %}
+
+{% endblock %}

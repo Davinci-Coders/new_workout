@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+  <h1>You're workout on {{ workout.date }}</h1>
+
+  {% for workout_set in workout.workoutset_set.all %}
+    {{ workout_set.exercise.title }} - {{ workout_set.reps }} reps - {{ workout_set.rep_style }} rep style
+  {% empty  %}
+    <h1>You was lazy</h1>
+  {% endfor %}
+
+
+{% endblock %}
